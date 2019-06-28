@@ -43,7 +43,7 @@ body {
   border: 1px solid #000;
   border-radius: 30px;
   display: flex;
-  height: 62px;
+  height: 60px;
 }
 .media-player__button {
   width: 60px;
@@ -66,13 +66,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 62px;
+  height: 60px;
 }
 .media-player__volume {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 62px;
+  height: 60px;
 }
 .media-player__volume-btn {
   border: none;
@@ -85,9 +85,9 @@ body {
 @media screen and (max-width: 640px) {
     .media-player__canvas {
       width: 100%;
-      height: calc(100% - 226px);
+      height: calc(100% - 220px);
     }
     .media-player__controls {
-      height: 226px;
+      height: 220px;
     }
   }
