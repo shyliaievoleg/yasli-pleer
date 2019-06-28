@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css?v=25062019">
+</head>
+<body>
+    <div class="container">
+        <article class="media-player">
+            <div class="media-player__canvas">
+                <canvas id="canvas"></canvas>
+            </div><!--/media-player__canvas -->
+            
+            <div class="media-player__controls">
+                <audio class="audio-player" src="piano.mp3">
+                    update your browser
+                </audio>
+                <div class="media-player__buttons">
+                    <button class="media-player__button media-player__button_slow"><i class="fa fa-angle-down"></i></button>
+                    <button class="media-player__button media-player__button_play"><i class="fa fa-play"></i></button>
+                    <button class="media-player__button media-player__button_stop"><i class="fa fa-stop"></i></button>
+                    <button class="media-player__button media-player__button_fast"><i class="fa fa-angle-up"></i></button>
+                </div>
+                <div class="media-player__progress">
+                    <input class="media-player__progress-element" type="range" min="0" max="100" step="0.01" value="0">
+                </div>
+                <div class="media-player__volume">
+                    <button class="media-player__button media-player__volume-btn"><i class="fas fa-volume-up"></i></button>
+                    <input class="media-player__volume-element" type="range" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div><!--/media-player__controls -->
+        </article>
+    </div><!--/container -->
+    <script src="node_modules/paper/dist/paper-full.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script type="text/paperscript" src="js/visualisation-paper-default.js" canvas="canvas"></script>
+</body>
+</html>
