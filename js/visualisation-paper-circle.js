@@ -1,20 +1,3 @@
-// Create AudioContext
-var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-var distortion = audioCtx.createWaveShaper();
-var analyser = audioCtx.createAnalyser();
-
-var audioElement = document.querySelector('.audio-player');
-
-analyser.fftSize = 2048;
-var bufferLength = analyser.frequencyBinCount;
-var dataArray = new Uint8Array(bufferLength);
-
-// Create MediaElementAudioSourceNode
-source = audioCtx.createMediaElementSource(audioElement);
-source.connect(analyser);
-analyser.connect(distortion);
-distortion.connect(audioCtx.destination);
-
 // Create Shape
 var circle = new Path({
   closed: true,
@@ -32,6 +15,23 @@ for (var i = 0; i < bufferLength; i++) {
     radius * Math.sin(angle * i)
   ));
 }
+
+// Create AudioContext
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var distortion = audioCtx.createWaveShaper();
+var analyser = audioCtx.createAnalyser();
+
+var audioElement = document.querySelector('.audio-player');
+
+analyser.fftSize = 2048;
+var bufferLength = analyser.frequencyBinCount;
+var dataArray = new Uint8Array(bufferLength);
+
+// Create MediaElementAudioSourceNode
+source = audioCtx.createMediaElementSource(audioElement);
+source.connect(analyser);
+analyser.connect(distortion);
+distortion.connect(audioCtx.destination);
 
 // Create Visual Effects
 view.onFrame = function() {
