@@ -1,26 +1,23 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=25062019">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css?v=29062019">
 </head>
 <body>
     <div class="container">
-        <nav>
-            <ul>
-                <li><a href="index.html">Line</a></li>
-                <li><a href="circle.html">Circle</a></li>
-            </ul>
-        </nav>
+        <ul class="view-links">
+            <li class="view-links__item"><a href="index.html" class="view-links__link">Line</a></li>
+            <li class="view-links__item">Circle</li>
+        </ul>
         <article class="media-player">
             <div class="media-player__canvas">
                 <canvas id="canvas"></canvas>
             </div><!--/media-player__canvas -->
             
             <div class="media-player__controls">
-                <audio class="audio-player" src="sample.mp3">
+                <audio class="audio-player" src="piano.mp3">
                     update your browser
                 </audio>
                 <div class="media-player__buttons">
@@ -39,8 +36,8 @@
             </div><!--/media-player__controls -->
         </article>
     </div><!--/container -->
-    <script src="js/paper-full.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script type="text/paperscript" src="js/visualisation-paper-circle.js" canvas="canvas"></script>
+    <script src="node_modules/paper/dist/paper-full.min.js"></script>
+    <script src="js/scripts.js?v=29062019"></script>
+    <script type="text/paperscript" src="js/visualisation-paper-circle.js?v=29062019_2" canvas="canvas"></script>
 </body>
 </html>

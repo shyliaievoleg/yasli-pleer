@@ -1,19 +1,17 @@
-'use strict';
-
 window.onload = function() {
 
     // Variables
-    const audioPlayer = document.querySelector('.audio-player');
-    const volume = document.querySelector('.media-player__volume-element');
-    const progress = document.querySelector('.media-player__progress-element');
-    const playBtn = document.querySelector('.media-player__button_play');
-    const stopBtn = document.querySelector('.media-player__button_stop');
-    const playSlowBtn = document.querySelector('.media-player__button_slow');
-    const playFastBtn = document.querySelector('.media-player__button_fast');
-    const volumeBtn = document.querySelector('.media-player__volume-btn');
-    const iconVolume = document.querySelector('.media-player__volume-btn i');
-    const iconPlay = document.querySelector('.media-player__button_play i');
-    const playerSpeedStep = 0.5;
+    var audioPlayer = document.querySelector('.audio-player');
+    var volume = document.querySelector('.media-player__volume-element');
+    var progress = document.querySelector('.media-player__progress-element');
+    var playBtn = document.querySelector('.media-player__button_play');
+    var stopBtn = document.querySelector('.media-player__button_stop');
+    var playSlowBtn = document.querySelector('.media-player__button_slow');
+    var playFastBtn = document.querySelector('.media-player__button_fast');
+    var volumeBtn = document.querySelector('.media-player__volume-btn');
+    var iconVolume = document.querySelector('.media-player__volume-btn i');
+    var iconPlay = document.querySelector('.media-player__button_play i');
+    var playerSpeedStep = 0.5;
 
     // Events
     playBtn.addEventListener('click', startPausePlaying);
@@ -32,6 +30,14 @@ window.onload = function() {
 
     volume.oninput = function() {
         audioPlayer.volume = this.value;
+
+        if (audioPlayer.volume === 0) {
+            iconVolume.classList.add('fa-volume-mute');
+            iconVolume.classList.remove('fa-volume-up');
+        } else {
+            iconVolume.classList.add('fa-volume-up');
+            iconVolume.classList.remove('fa-volume-mute');
+        }
     }
 
     audioPlayer.ontimeupdate = function() {
@@ -82,6 +88,7 @@ window.onload = function() {
     }
     
     //TODO: volume value return to current before mute.
+    //TODO: keep visualizing while mute
     function mute(e) {
         if (!iconVolume.classList.contains('fa-volume-mute')) {
             audioPlayer.volume = 0;
