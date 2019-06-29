@@ -1,5 +1,7 @@
 window.onload = function() {
 
+    // TODO: Throw errors if browser can't play sound or can't dowload it.
+
     // Variables
     var audioPlayer = document.querySelector('.audio-player');
     var volume = document.querySelector('.media-player__volume-element');
