@@ -1,18 +1,3 @@
-// Create Shape
-var path = new Path({
-  strokeColor: 'black',
-  strokeWidth: 2,
-  strokeJoin: 'miter',
-  strokeCap: 'butt',
-  miterLimit: 30
-});
-
-var step = (view.size.width / bufferLength) * 2.5;
-
-for (var i = 0; i <= bufferLength; i++) {
-  path.add(new Point(i * step, view.size.height / 2));
-}
-
 // Create AudioContext
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 var distortion = audioCtx.createWaveShaper();
@@ -29,6 +14,21 @@ source = audioCtx.createMediaElementSource(audioElement);
 source.connect(analyser);
 analyser.connect(distortion);
 distortion.connect(audioCtx.destination);
+
+// Create Shape
+var path = new Path({
+  strokeColor: 'black',
+  strokeWidth: 2,
+  strokeJoin: 'miter',
+  strokeCap: 'butt',
+  miterLimit: 30
+});
+
+var step = (view.size.width / bufferLength) * 2.5;
+
+for (var i = 0; i <= bufferLength; i++) {
+  path.add(new Point(i * step, view.size.height / 2));
+}
 
 // Create Visual Effects
 view.onFrame = function() {
